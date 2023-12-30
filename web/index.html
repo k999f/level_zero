@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search order</title>
+</head>
+<script>
+    function redirectToOrder() {
+        var numbers = /^[0-9]+$/;
+        uid = document.getElementById("orderUid").value;
+        if (uid.match(numbers)) {
+            window.location.href = "/order/" + uid;
+        }
+        else {
+            alert("Invalid UID")
+        }
+    }
+</script>
+<body>
+    Search order by UID
+    <br>
+    <input type="text", id="orderUid">
+    <button onclick="redirectToOrder()">Search</button>
+</body>
+</html>

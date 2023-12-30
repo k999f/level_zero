@@ -1,0 +1,8 @@
+{
+  "db_user": "user",
+  "db_password": "password",
+  "db_name": "level_zero_db",
+  "server_port": "8080",
+  "nats_url" : "127.0.0.1:4222",
+  "nats_subject" : "orders-subject"
+}

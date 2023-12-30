@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View order</title>
+</head>
+<body>
+    <b style="color:blue;">Order {{.OrderUid}}</b><br>
+    <b>Track number: </b>{{.TrackNumber}}<br>
+    <b>Entry: </b>{{.Entry}}<br>
+    <b>Locale: </b> {{.Locale}}<br>
+    <b>Internal signature: </b>{{.InternalSignature}}<br>
+    <b>Customer ID: </b>{{.CustomerId}}<br>
+    <b>Delivery service: </b>{{.DeliveryService}}<br>
+    <b>Shard Key: </b>{{.Shardkey}}<br>
+    <b>SM ID: </b>{{.SmId}}<br>
+    <b>Date created: </b>{{.DateCreated}}<br>
+    <b>OOF shard: </b>{{.OofShard}}<br><br>
+    <b style="color:blue;">Delivery</b><br>
+    <b>Name: </b> {{.Delivery.Name}}<br>
+    <b>Phone: </b> {{.Delivery.Phone}}<br>
+    <b>ZIP: </b> {{.Delivery.Zip}}<br>
+    <b>City: </b> {{.Delivery.City}}<br>
+    <b>Adress: </b> {{.Delivery.Adress}}<br>
+    <b>Region: </b> {{.Delivery.Region}}<br>
+    <b>Email: </b> {{.Delivery.Email}}<br><br>
+    <b style="color:blue;">Payment</b><br>
+    <b>Transaction: </b> {{.Payment.Transaction}}<br>
+    <b>Request ID: </b> {{.Payment.RequestId}}<br>
+    <b>Currency: </b> {{.Payment.Currency}}<br>
+    <b>Provider: </b> {{.Payment.Provider}}<br>
+    <b>Amount: </b> {{.Payment.Amount}}<br>
+    <b>Payment DT: </b> {{.Payment.PaymentDt}}<br>
+    <b>Bank: </b> {{.Payment.Bank}}<br>
+    <b>Delivery cost: </b> {{.Payment.DeliveryCost}}<br>
+    <b>Goods total: </b> {{.Payment.GoodsTotal}}<br>
+    <b>Custom fee: </b> {{.Payment.CustomFee}}<br><br>
+    <b style="color:blue;">Items</b><br>
+    {{ range .Items }}
+    <b>CHRT ID: </b> {{.ChrtId}}<br>
+    <b>Track number: </b> {{.TrackNumber}}<br>
+    <b>Price: </b> {{.Price}}<br>
+    <b>RID: </b> {{.Rid}}<br>
+    <b>Name: </b> {{.Name}}<br>
+    <b>Sale: </b> {{.Sale}}<br>
+    <b>Size: </b> {{.Size}}<br>
+    <b>Total price: </b> {{.TotalPrice}}<br>
+    <b>NM ID: </b> {{.NmId}}<br>
+    <b>Brand: </b> {{.Brand}}<br>
+    <b>Status: </b> {{.Status}}<br><br>
+    {{ end }}
+</body>
+</html>

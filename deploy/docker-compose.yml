@@ -1,0 +1,17 @@
+version: '3'
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres_level_zero
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: level_zero_db
+    ports:
+      - "5432:5432"
+  nats:
+    image: nats:latest
+    container_name: nats_level_zero
+    ports:
+      - "4222:4222"
