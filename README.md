@@ -4,7 +4,7 @@
 Go to level_zero directory:<br>
 `cd path/to/level_zero`
 
-Start container with PostgreSQL and a NATS:<br>
+Start container with PostgreSQL and a NATS Streaming:<br>
 `docker-compose -f deploy/docker-compose.yml up`
 
 Run server:<br>

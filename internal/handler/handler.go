@@ -12,7 +12,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/nats-io/nats.go"
+	"github.com/nats-io/stan.go"
 )
 
 func IndexHandler (w http.ResponseWriter, r *http.Request) {
@@ -53,8 +53,8 @@ func OrderHandler(c cache.Cache) http.HandlerFunc {
     }
 }
 
-func MessageHandler(cache cache.Cache, conn *sql.DB) nats.MsgHandler {
-    return func(m *nats.Msg) {
+func MessageHandler(cache cache.Cache, conn *sql.DB) stan.MsgHandler {
+    return func(m *stan.Msg) {
 		order := models.Order{}
 
 		err := json.Unmarshal(m.Data, &order)

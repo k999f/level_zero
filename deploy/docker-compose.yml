@@ -11,7 +11,7 @@ services:
     ports:
       - "5432:5432"
   nats:
-    image: nats:latest
+    image: nats-streaming
     container_name: nats_level_zero
     ports:
       - "4222:4222"

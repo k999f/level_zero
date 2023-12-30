@@ -13,6 +13,7 @@ type Config struct {
 	ServerPort string `json:"server_port"`
 	NatsUrl string `json:"nats_url"`
 	NatsSubject string `json:"nats_subject"`
+	NatsCluster string `json:"nats_cluster"`
 }
 
 func InitialzeConfig(path string) Config {

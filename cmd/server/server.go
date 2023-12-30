@@ -12,7 +12,7 @@ import (
 	"level_zero/internal/db"
 	"level_zero/internal/handler"
 
-	"github.com/nats-io/nats.go"
+	"github.com/nats-io/stan.go"
 
 	"github.com/gorilla/mux"
 )
@@ -37,7 +37,7 @@ func main() {
 	log.Print("Cache initialazed with ", len(cache.Data), " orders")
 
 	natsUrl := fmt.Sprintf("nats://%s", config.NatsUrl)
-	nc, err := nats.Connect(natsUrl)
+	nc, err := stan.Connect(config.NatsCluster, "subscriber", stan.NatsURL(natsUrl))
 	if err != nil {
 		log.Fatal("Nats connection error: ", err)
 	}

@@ -13,7 +13,7 @@ import (
 
 	"github.com/brianvoe/gofakeit/v6"
 
-	"github.com/nats-io/nats.go"
+	"github.com/nats-io/stan.go"
 )
 
 const (
@@ -103,7 +103,7 @@ func main() {
 	config := config.InitialzeConfig(configPath)
 	
 	natsUrl := fmt.Sprintf("nats://%s", config.NatsUrl)
-	nc, err := nats.Connect(natsUrl)
+	nc, err := stan.Connect(config.NatsCluster, "generator", stan.NatsURL(natsUrl))
 	defer nc.Close()
 
 	if err != nil {
