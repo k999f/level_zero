@@ -16,7 +16,7 @@ import (
 )
 
 func IndexHandler (w http.ResponseWriter, r *http.Request) {
-	ts, err := template.ParseFiles("/Users/username/Downloads/level_zero/web/index.html")
+	ts, err := template.ParseFiles("web/index.html")
 	if err != nil {
 		log.Println("Parsing index page error: ", err)
 		http.Error(w, "Index page not found", 404)
@@ -35,7 +35,7 @@ func OrderHandler(c cache.Cache) http.HandlerFunc {
     	uid := vars["uid"]
 		order, ok := c.GetCache(uid)
 
-		ts, err := template.ParseFiles("/Users/username/Downloads/level_zero/web/order.html")
+		ts, err := template.ParseFiles("web/order.html")
 		if err != nil {
 			log.Println("Parsing order page error: ", err)
 			http.Error(w, "Order page not found", 404)

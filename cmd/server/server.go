@@ -18,8 +18,8 @@ import (
 )
 
 func main() {
-	configPath := "./config/config.json"
-	schemaPath := "./internal/db/scripts/create_schema.sql"
+	configPath := "config/config.json"
+	schemaPath := "internal/db/scripts/create_schema.sql"
 	config := config.InitialzeConfig(configPath)
 
 	conn, err := db.InitialzeDatabase(config, schemaPath)

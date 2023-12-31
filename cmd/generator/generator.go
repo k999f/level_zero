@@ -99,7 +99,7 @@ func randomOrder() models.Order {
 }
 
 func main() {
-	configPath := "./config/config.json"
+	configPath := "config/config.json"
 	config := config.InitialzeConfig(configPath)
 	
 	natsUrl := fmt.Sprintf("nats://%s", config.NatsUrl)
